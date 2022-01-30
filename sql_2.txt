@@ -1,0 +1,10 @@
+
+Задача:
+Образовательные курсы состоят из различных уроков, каждый из которых состоит из нескольких маленьких заданий. Каждое такое маленькое задание называется "горошиной".
+
+Назовём очень усердным учеником того пользователя, который хотя бы раз за текущий месяц правильно решил 20 горошин за час.
+Необходимо написать оптимальный запрос, который даст информацию о количестве очень усердных студентов за март 2020 года.
+
+
+
+  SELECT         COUNT(DISTINCT st_id) as numb_diligent_students     FROM         (SELECT            st_id,             timest,             ANY(timest) over (PARTITION BY st_id                             ORDER BY timest ASC                            ROWS BETWEEN 19 PRECEDING and 19 PRECEDING) as prev         FROM            peas         WHERE             Year(timest) = 2020         AND             Month(timest) = 3         AND             correct = 1         ORDER BY            st_id ASC, timest ASC) as q1     WHERE         dateDiff('second', prev, timest) <= 3600

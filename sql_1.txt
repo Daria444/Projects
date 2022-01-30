@@ -1,0 +1,6 @@
+‡адача:
+Ќеобходимо написать запрос, который выведет все подозрительные действиЯ пользователей.
+* подозрительными считаютсЯ действиЯ разного типа (action_type), совершенные с интервалом менее 10 секунд одним пользователем.
+
+
+SELECT	client_id,	created_at,	action_typeFROM	(SELECT		client_id,		created_at,		action_type,		created_at Р LAG(created_at, 1) OVER w AS delta,		client_id Р LAG(client_id, 1) OVER w AS delta_client,		action_type Р LAG(action_type, 1) OVER w AS delta_type,		created_at Р LAG(created_at, -1) OVER w AS delta_2,		client_id Р LAG(client_id, -1) OVER w AS delta_client_2,		action_type Р LAG(action_type, -1) OVER w AS delta_type_2	FROM		mytable	WINDOW w AS (		PARTITION BY client_id		ORDER BY created_at				)	ORDER BY		client_id,		created_at) AS lWHERE	delta  <  Х00:00:10ХAND	delta_type != 0AND	delta_client = 0OR	delta_2 > Ф-00:00:10ХAND	delta_type_2 != 0AND	delta_client_2 = 0
