@@ -3,7 +3,8 @@
 This repository contains notebooks that I created while studying at the university, in the online school karpov.courses and in the process of self-studying the basic tools needed for data analysis.
 
 ---
-classification_site_users.ipynb 
+## classification_site_users.ipynb 
+
 Сontains an analysis of user behavior on the Internet in order to recognize the target user from his Internet sessions
 
 2. eda_cluster_analysis.ipynb contains an exploratory analysis of a dataset containing information about housing, as well as cluster analysis of housing based on characteristics such as sale price, location type, area, etc.
