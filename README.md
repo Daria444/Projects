@@ -37,5 +37,5 @@ Contains algorithm Dijkstra that allow to find the shortest path from one of the
 
 ## travelling_salesman_problem 
 
-Contains Ant algorithm that allow to to search for the most profitable route passing through the cities
+Contains the implementation of Ant colony algorithm that allow to to search for the most profitable route passing through the cities
 
