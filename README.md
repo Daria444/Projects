@@ -2,6 +2,7 @@
 1. classification_site_users.ipynb contains an analysis of user behavior on the Internet in order to recognize the target user from his Internet sessions
 2. eda_cluster_analysis.ipynb contains an exploratory analysis of a dataset containing information about housing, as well as cluster analysis of housing based on characteristics such as sale price, location type, area, etc.
 3. eda.ipynb contains an exploratory analysis of a dataset containing information about client's credit history
+4. ab_test.ipynb contains A/B-testing of the hypothesis, which consists in launching a new mechanics of payment for services on the site
 5. sql_queries contains some sql queries written by me as part of the training at the online school karpov.courses
 6. optimization_algorithms contains optimization algorithms that allow finding those points in the function definition area at which it reaches the minimum or maximum value
 7. multiobjective_optimization contains an algorithm that allows to construct a Pareto-optimal set of alternatives, minimizing or maximizing the given criteria
